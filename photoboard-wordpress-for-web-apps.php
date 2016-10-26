@@ -5,7 +5,7 @@
  * Plugin URI: https://github.com/cferdinandi/photoboard-wordpress-for-web-apps
  * GitHub Plugin URI: https://github.com/cferdinandi/photoboard-wordpress-for-web-apps
  * Description: Add user groups to Photoboard
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Chris Ferdinandi
  * Author URI: http://gomakethings.com
  * License: All rights reserved
@@ -38,7 +38,7 @@
 		if ( is_user_logged_in() || is_page() ) return;
 
 		// Only run if WordPress for Web Apps is installed
-		if ( function_exists( 'wpwebapp_get_theme_options' ) ) return;
+		if ( !function_exists( 'wpwebapp_get_theme_options' ) ) return;
 
 		// Get redirect
 		$options = wpwebapp_get_theme_options();
